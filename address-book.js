@@ -59,6 +59,23 @@ let error_fName = document.querySelector(".error-fName");
 let error_lName = document.querySelector(".error-lName");
 
 
+firstName.addEventListener('input',function () {
+    let firstNameRegex= RegExp('^[A-Z]{1}[a-z]{2,}$');
+    if(firstNameRegex.test(firstName.value))
+        error_fName.textContent = "";
+    else
+        error_fName.textContent = "Incorrect First Name";
+
+});
+
+lastName.addEventListener('input',function () {
+    let lastNameRegex= RegExp('^[A-Z]{1}[a-z]{2,}$');
+    if(lastNameRegex.test(lastName.value))
+        error_lName.textContent = "";
+    else
+        error_lName.textContent = "Incorrect Last Name";
+});
+
 function addContact(){
     let ab = new AddressBook(firstName,
         lastName,
