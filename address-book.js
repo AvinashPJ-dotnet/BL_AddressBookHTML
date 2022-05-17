@@ -23,28 +23,29 @@ class AddressBook{
     get getFirstName(){return this.firstName;}
     set setFirstName(firstName){this.firstName = firstName;}
 
-    get lastName(){return this.lastName;}
+    get getlastName(){return this.lastName;}
     set lastName(lastName){this.lastName = lastName;}
 
-    get address(){return this.address;}
+    get getAddress(){return this.address;}
     set address(address){this.address = address;}
 
-    get city(){return this.city;}
+    get getCity(){return this.city;}
     set city(city){this.city = city;}
 
-    get state(){return this.state;}
+    get getState(){return this.state;}
     set state(state){this.state = state;}
 
-    get pin(){return this.pin;}
+    get getPin(){return this.pin;}
     set pin(pin){this.pin = pin;}
 
-    get phone(){return this.phone;}
+    get getPhone(){return this.phone;}
     set phone(phone){this.phone = phone;}
 
-    get mailId(){return this.mailId;}
+    get getMailId(){return this.mailId;}
     set mailId(mailId){this.mailId = mailId;}
 
 }
+let addessArray = [];
 let ab = new AddressBook();
 
 let firstName = document.querySelector("#fName");
@@ -85,5 +86,14 @@ function addContact(){
         pin,
         phone,
         mailId);
+        addessArray.push(ab);
     console.log("first Nmae :"+ab.getFirstName.value);
+}
+
+function displayContact(){
+    let contact;
+    for(let obj of addessArray){
+        contact += obj.getFirstName.value +","+ obj.getlastName.value+","+ obj.getAddress.value+","+ obj.getCity.value+","+ obj.getState.value +","+ obj.getPhone.value+","+ obj.getPin.value+","+ obj.getMailId.value +"<br>" ;
+    }
+    document.getElementById("display").innerHTML = contact;
 }
